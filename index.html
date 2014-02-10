@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="mobile-date-selection.js"></script>
+  <link rel="stylesheet" href="mobile-date-selection.css" />
+  <link rel="stylesheet" href="mobile-date-selection-site.css" />
+
+  <script>
+    $(function() {
+      $('.datepicker').mobileDateSelection({});
+    });
+  </script>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="inner">
+      <p>mobileDateInput</p>
+      <ul>
+        <li><a href="options.html">Options</a></li>
+        <li><a href="https://github.com/emmasax/mobile-date-selector">View on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <div class="inner">
+      <div class="section">
+        <h1>A jQuery plugin for mobile date input</h1>
+        <label for="date">Date</label>
+        <input type="text" value="" class="datepicker" id="date" />
+      </div>
+    
+      <div class="section">
+        <h2>What is this all about?</h2>
+        <ul>
+          <li>Solution to entering dates on mobile devices</li>
+          <li>Single input date for desktop</li>
+          <li>More intuitive dropdowns for mobile</li>
+          <li>Dropdowns populate original input field</li>
+          <li>Configuration options</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h2>How do I use it?</h2>
+        <h3>Step 1: Include files</h3>
+        <p>At it's simplest you just need the jQuery library and the mobileDateSelection Javascript file:</p>
+        <code><pre>
+&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="[your-path]/mobile-date-selection.js"&gt;&lt;/script&gt;</pre></code>
+
+        <p>There is also a basic theme:</p>
+        <code><pre>
+&lt;link rel="stylesheet" href="[your-path]/mobile-date-selection.css" /&gt;</pre></code>
+
+        <h3>Step 2: Add a class</h3>
+        <p>Add a class of "datepicker" to your input field:</p>
+        <code><pre>
+&lt;input type="text" value="" class="datepicker" /&gt;</pre></code>
+
+        <h3>Step 3: Initialise the plugin</h3>
+        <code><pre>
+$(function() {
+  $('.datepicker').mobileDateSelection();
+});</pre></code>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

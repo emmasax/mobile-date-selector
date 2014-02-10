@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+.mds-mobile-date {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+}
+.mds-mobile-date, .mds-mobile-date li {
+  margin: 0;
+  padding: 0;
+}
+.mds-mobile-date li {
+  list-style-type: none;
+  float: left;
+  margin-right: 10px;
+}
+.mds-mobile-date li:last-child {
+  margin-right: 0;
+}
+.mds-mobile-date label {
+  display: block;
+  font-weight: 600;
+}

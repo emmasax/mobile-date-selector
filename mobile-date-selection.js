@@ -10,6 +10,7 @@
         longMonths: true,
         numYears: 10,
         startYear: (new Date).getFullYear(),
+        breakPoint: 568,
         
         // global variables
         day: "",
@@ -20,7 +21,10 @@
         days: ["", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
         monthsShort: ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         monthsLong: ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        years: []
+        years: [], 
+        daysSelect: "",
+        monthsSelect: "",
+        yearsSelect: ""
     	};
 
 	function Plugin ( element, options ) {
@@ -34,20 +38,44 @@
 	Plugin.prototype = {
 		init: function () {
       base = this;
+      $window = $(window);
       this.setUpYears(this.element, this.settings);
       this.createDom(this.element, this.settings);
 
-      $('.' + this.settings.selectorClass + ' select#day').on('change', function() {
-        base.buildDayDate(base.element, base.settings);
-      });
-      $('.' + this.settings.selectorClass + ' select#month').on('change', function() {
-        base.buildMonthDate(base.element, base.settings);
-      });
-      $('.' + this.settings.selectorClass + ' select#year').on('change', function() {
-        base.buildYearDate(base.element, base.settings);
-      });          
+      $window.resize(function() {
+        base.checkWidth(this.element, this.settings)
+      })
+      this.checkWidth(this.element, this.settings)
 		},
+    
+    checkWidth: function() {
+      mobileDateSelector = $('.' + this.settings.selectorClass),
+      elementLabel = $('label[for=' + $(this.element).attr('id') + ']');
 
+      if ($window.width() < this.settings.breakPoint) {
+        if(mobileDateSelector.length == 0) {
+          elementLabel.hide();
+          $(this.element).hide().after('<ul class="' + this.settings.selectorClass + '"><li>' + daysSelect + '</li><li>' + monthsSelect + '</li><li>' + yearsSelect + '</li></ul>');
+
+          $('.' + this.settings.selectorClass + ' select#day').on('change', function() {
+            base.buildDayDate(base.element, base.settings);
+          });
+          $('.' + this.settings.selectorClass + ' select#month').on('change', function() {
+            base.buildMonthDate(base.element, base.settings);
+          });
+          $('.' + this.settings.selectorClass + ' select#year').on('change', function() {
+            base.buildYearDate(base.element, base.settings);
+          });          
+        }
+      }
+      else {
+        $(this.element).show();
+        elementLabel.show();
+        mobileDateSelector.remove();
+        $('.' + this.settings.selectorClass + '-error').remove();
+      }
+    },
+    
     setUpYears: function() {
       if(this.settings.showBlanks) this.settings.years.push("");
       for(i=0; i < this.settings.numYears; i++) {           
@@ -70,11 +98,10 @@
       for(i=indexStart; i < this.settings.years.length; i++) { 
         yearsOptions += "<option>" + this.settings.years[i] + "</option>";
       }
-      var daysSelect = '<label for="day">Date</label><select id="day">' + daysOptions + '</select>';
-      var monthsSelect = '<label for="month">Month</label><select id="month">' + monthsOptions + '</select>';
-      var yearsSelect = '<label for="year">Year</label><select id="year">' + yearsOptions + '</select>';
-    
-      $(this.element).after('<ul class="' + this.settings.selectorClass + '"><li>' + daysSelect + '</li><li>' + monthsSelect + '</li><li>' + yearsSelect + '</li></ul>');      
+      daysSelect = '<label for="day">Date</label><select id="day">' + daysOptions + '</select>';
+      monthsSelect = '<label for="month">Month</label><select id="month">' + monthsOptions + '</select>';
+      yearsSelect = '<label for="year">Year</label><select id="year">' + yearsOptions + '</select>';
+
     },
   
     buildDayDate: function() {

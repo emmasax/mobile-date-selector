@@ -1,0 +1,109 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+body, h1, h2, h3, p, ul, li {
+  padding: 0;
+  margin: 0;  
+}
+body {
+  background-color: #f2f2f2;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #555;
+}
+ul {
+  margin-left: 20px;
+}
+.nav, .content {
+  padding: 10px;
+}
+h2, h3 {
+  font-weight: 600;
+}
+h1, h2, h3 {
+  color: #333;
+  line-height: 1;
+}
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+h2 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+h3 {
+  font-size: 1em;
+}
+pre {
+  color: #333;
+  padding: 5px 10px;
+  margin: 0;
+  line-height: 1.5;
+}
+code {
+  background-color: #fff;
+  overflow: scroll;
+  display: block;
+  margin-bottom: 30px;
+  white-space: nowrap;
+}
+p {
+  margin-bottom: 10px;
+}
+.nav {
+  background-color: #333;
+}
+.nav p, .nav li {
+  text-align: center;  
+}
+.nav li {
+  list-style-type: none;
+}
+.nav, .nav a {
+  color :#fff;
+}
+.nav .for-mobile {
+  float: right;
+}
+.nav ul {
+  clear: both;
+  margin-left: 0;
+  width: 100%;
+}
+label {
+  display: block;
+  font-weight: bold;
+}
+.section {
+  margin-bottom: 30px;
+}
+@media all and (min-width: 568px) {
+  .content {
+    padding-top: 30px;
+  }
+  .inner {
+    max-width: 940px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2.6em;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  code {
+    overflow: visible;
+  }
+  pre {
+    padding: 10px 15px;
+  }
+  
+}
