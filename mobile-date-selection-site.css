@@ -13,14 +13,17 @@ body {
 ul {
   margin-left: 20px;
 }
+iframe {
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  padding: 20px;
+  width: 240px;
+}
 .content {
   padding: 20px 10px;
 }
 .nav {
   padding: 20px 0;
-}
-.nav li {
-  padding-bottom: 10px;
 }
 h1, h2, h3 {
   color: #333;
@@ -28,6 +31,7 @@ h1, h2, h3 {
 }
 h1 {
   font-size: 1.5em;
+  color: #c0392b;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -60,11 +64,16 @@ code p:first-child {
   padding-bottom: 0;
   margin: 0;
 }
+a {
+  color: #e74c3c;
+  text-decoration: none;
+}
 p {
   margin-bottom: 10px;
 }
 .nav {
-  background-color: #333;
+  background-color: #c0392b;
+  overflow: hidden;
 }
 .nav p, .nav li {
   text-align: center;  
@@ -73,16 +82,25 @@ p {
   margin-bottom: 20px;
 }
 .nav p a {
-  color: #f90;
-  font-weight: 600;
-  text-decoration: none;
+  color: rgba(#fff, 0.5);
   font-size: 1.5em;
+}
+.nav ul {
+  overflow: hidden;
+  float: right;
 }
 .nav li {
   list-style-type: none;
+  float: left;
+  margin-left: 20px;
 }
-.nav, .nav a {
+.nav li a {
   color :#fff;
+  text-decoration: underline;  
+  font-weight: 500;
+}
+.nav a {
+  font-weight: 700;
 }
 .nav .for-mobile {
   float: right;
@@ -90,10 +108,11 @@ p {
 .nav ul {
   clear: both;
   margin-left: 0;
-  width: 100%;
+/*  width: 100%;*/
 }
 label {
   display: block;
+  font-size: 12px;
   font-weight: bold;
 }
 input {
@@ -109,21 +128,34 @@ input {
   padding-bottom: 3px;
 }
 .footer {
-  background-color: #404040;
+  background-color: #2c3e50;
   padding: 30px 10px;
-  color: #fff;
+  color: #7f8c8d;
 }
 .footer li {
   list-style-type: none;
   padding-bottom: 5px;
 }
 .footer li a {
-  color: #f90;
+  color: #fff;
+}
+.demo {
+  margin: 0;
+}
+.demo > li {
+  list-style-type: none;
+  margin-bottom: 50px;
+}
+.demo li:last-child {
+  margin-bottom: 0;
+}
+.demo p {
   font-weight: 600;
+  font-size: 1.1em;
 }
 @media all and (min-width: 568px) {
   .content {
-    padding-top: 50px;
+    padding-top: 30px;
   }
   .inner {
     max-width: 740px;
@@ -132,6 +164,8 @@ input {
   h1 {
     font-size: 2.6em;
     margin-bottom: 30px;
+  }
+  .other h1 {
     text-align: left;
   }
   h2 {
@@ -166,4 +200,14 @@ input {
     float: left;
     padding-right: 40px;
   }
+  .demo li {
+    float: left;
+    margin-right: 40px;
+  }
+  .demo {
+    overflow: hidden;
+  }
+  iframe {
+    width: auto;
+  } 
 }
