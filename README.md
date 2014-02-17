@@ -1,11 +1,13 @@
 # A jQuery plugin for mobile date input
 
+An intuitive date picker for mobile devices.
+
+[View the demo page](http://emmasax.github.io/mobile-date-selector/)
+
 ## What is this all about?
 
-* Solution to entering dates on mobile devices
-* Single input date for desktop
-* More intuitive dropdowns for mobile
-* Dropdowns populate original input field
+* Use in conjunction with a single input field for desktop
+* The three select boxes will populate your original input field
 * [Configuration options](options.html)
 
 ## How do I use it?
