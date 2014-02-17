@@ -128,7 +128,7 @@
           $(this.element).val(this.settings.wholeDate);
         }
         else {
-          $(this.element).after('<div class="' + this.settings.selectorClass + '-error">'+this.settings.errorMessage+'</div');
+          $('.' + this.settings.selectorClass).after('<div class="' + this.settings.selectorClass + '-error">'+this.settings.errorMessage+'</div');
         }
       }
     },
