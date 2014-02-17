@@ -35,6 +35,8 @@ Add a class of "datepicker" to your input field:
 
 ## To do list
 
+### Make a stand-alone demo
+
 ### Ability to enable test mode
 A flag to output the date to the screen for debugging purposes.
 
