@@ -31,7 +31,9 @@ Add a class of "datepicker" to your input field:
         $('.datepicker').mobileDateSelection();
     });
 
-# To do
+## To do list
 
-## Ability to enable test mode
+### Ability to enable test mode
 A flag to output the date to the screen for debugging purposes.
+
+### Tidy up plugin code!
