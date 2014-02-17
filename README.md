@@ -8,7 +8,7 @@ An intuitive date picker for mobile devices.
 
 * Use in conjunction with a single input field for desktop
 * The three select boxes will populate your original input field
-* [Configuration options](options.html)
+* [Configuration options](http://emmasax.github.io/mobile-date-selector/options.html)
 
 ## How do I use it?
 ### Step 1: Include files
