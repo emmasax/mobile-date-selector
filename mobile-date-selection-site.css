@@ -155,7 +155,7 @@ input {
 }
 @media all and (min-width: 568px) {
   .content {
-    padding-top: 30px;
+    padding-top: 50px;
   }
   .inner {
     max-width: 740px;
