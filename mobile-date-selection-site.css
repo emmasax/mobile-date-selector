@@ -13,11 +13,8 @@ body {
 ul {
   margin-left: 20px;
 }
-iframe {
-  border: 1px solid #ddd;
-  margin: 0 auto;
-  padding: 20px;
-  width: 240px;
+.noplugin {
+  margin-bottom: 40px;
 }
 .content {
   padding: 20px 10px;
@@ -96,8 +93,8 @@ p {
 }
 .nav li a {
   color :#fff;
-  text-decoration: underline;  
-  font-weight: 500;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 .nav a {
   font-weight: 700;
@@ -153,6 +150,9 @@ input {
   font-weight: 600;
   font-size: 1.1em;
 }
+.demo input {
+  margin-bottom: 10px;
+}
 @media all and (min-width: 568px) {
   .content {
     padding-top: 30px;
@@ -163,21 +163,34 @@ input {
   }
   h1 {
     font-size: 2.6em;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+    text-align: left;
   }
   .other h1 {
     text-align: left;
   }
   h2 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+  }
+  .noplugin h2 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
   }
   h3 {
-    font-size: 1.1em;
-    margin-bottom: 5px;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+  }
+  .noplugin {
+    float: left;
+    margin-right: 80px;
+    margin-bottom: 0;
   }
   .section {
     margin-bottom: 50px;
+  }
+  .section.top {
+    float: left;
   }
   code {
     overflow: visible;
@@ -186,9 +199,9 @@ input {
     padding: 10px 15px;
   }
   .features {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
   }
-  .features li {
+  .features li, p {
     font-size: 1.2em;
   }
   .footer {
@@ -207,7 +220,4 @@ input {
   .demo {
     overflow: hidden;
   }
-  iframe {
-    width: auto;
-  } 
 }
