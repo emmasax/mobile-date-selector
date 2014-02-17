@@ -30,3 +30,8 @@ Add a class of "datepicker" to your input field:
     $(function() {
         $('.datepicker').mobileDateSelection();
     });
+
+# To do
+
+## Ability to enable test mode
+A flag to output the date to the screen for debugging purposes.
