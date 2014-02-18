@@ -38,6 +38,6 @@ Add a class of "datepicker" to your input field:
 1. Make a stand-alone demo
 
 2. Ability to enable test mode
-    A flag to output the date to the screen for debugging purposes.
+A flag to output the date to the screen for debugging purposes.
 
 3. Tidy up plugin code!
