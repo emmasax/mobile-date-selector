@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+  <script src="mobile-date-selection.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="mobile-date-selection.css" type="text/css" />
+  <link rel="stylesheet" href="mobile-date-selection-site.css" type="text/css" />
+  <script>
+    $(function() {
+      $('.datepicker').mobileDateSelection({});
+    });
+  </script>
+</head>
+
+<body>
+  <h2>Plugin <span class="for-mobile">enabled</span><span class="non-mobile">disabled</span></h2>
+  <ul class="demo">
+    <li>
+      <label for="date">Date</label>
+      <input type="text" value="" class="datepicker" id="date" />
+    </li>
+  </ul>
+</body>
+</html>

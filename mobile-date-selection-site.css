@@ -22,6 +22,9 @@ ul {
 .nav {
   padding: 20px 0;
 }
+.non-mobile {
+  display: none;
+}
 h1, h2, h3 {
   color: #333;
   line-height: 1;
@@ -153,7 +156,16 @@ input {
 .demo input {
   margin-bottom: 10px;
 }
+.demo-page input, .demo-page .mds-mobile-date, .mds-datepicker-error {
+  margin-bottom: 10px;
+}
 @media all and (min-width: 568px) {
+  .non-mobile {
+    display: inline;
+  }
+  .for-mobile {
+    display: none;
+  }
   .content {
     padding-top: 50px;
   }
