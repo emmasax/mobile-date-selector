@@ -13,14 +13,14 @@ An intuitive date picker for mobile devices.
 ## How do I use it?
 ### Step 1: Include files
 
-At it's simplest you just need the jQuery library and the mobileDateSelection Javascript file:
+At it's simplest you just need the jQuery library and the mobiledateselector Javascript file:
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="[your-path]/mobile-date-selection.js"></script>
+    <script src="[your-path]/jquery.mobiledateselector.min.js"></script>
 
 There is also a basic theme:
 
-    <link rel="stylesheet" href="[your-path]/mobile-date-selection.css" />
+    <link rel="stylesheet" href="[your-path]/mobile-date-selector.css" />
 
 ### Step 2: Add a class
 
@@ -30,14 +30,5 @@ Add a class of "datepicker" to your input field:
 
 ### Step 3: Initialise the plugin
     $(function() {
-        $('.datepicker').mobileDateSelection();
+        $('.datepicker').mobileDateSelector();
     });
-
-## To do list
-
-1. Make a stand-alone demo
-
-2. Ability to enable test mode
-A flag to output the date to the screen for debugging purposes.
-
-3. Tidy up plugin code!

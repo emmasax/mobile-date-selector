@@ -1,20 +1,13 @@
-// the semi-colon before function invocation is a safety net against concatenated
-// scripts and/or other plugins which may not be closed properly.
+/**
+ * MobileDateSelector v0.0.1 - 
+ * http://emmasax.github.io/mobile-date-selector/ - An intuitive date picker for mobile devices.
+ *
+ * Copyright 2014, Emma Patricios - http://punkchip.com
+ *
+ * Released under the MIT license - http://opensource.org/licenses/MIT
+ */
 ;(function ( $, window, document, undefined ) {
-
-		// undefined is used here as the undefined global variable in ECMAScript 3 is
-		// mutable (ie. it can be changed by someone else). undefined isn't really being
-		// passed in so we can ensure the value of it is truly undefined. In ES5, undefined
-		// can no longer be modified.
-
-		// window and document are passed through as local variable rather than global
-		// as this (slightly) quickens the resolution process and can be more efficiently
-		// minified (especially when both are regularly referenced in your plugin).
-
-		// Create the defaults once
-		var pluginName = "mobileDateSelection";
-
-		// The actual plugin constructor
+		var pluginName = "mobileDateSelector";
 		function Plugin ( element, options ) {
       
     defaults = {
@@ -26,6 +19,7 @@
         numYears: 10,
         startYear: (new Date).getFullYear(),
         breakPoint: 568,
+        selectWrapper: "",
       
         // global variables
         day: "",
@@ -42,13 +36,8 @@
         yearsSelect: "",
         color: 'red'
       };
-        
-      
+
 				this.element = element;
-				// jQuery has an extend method which merges the contents of two or
-				// more objects, storing the result in the first object. The first object
-				// is generally empty as we don't want to alter the default options for
-				// future instances of the plugin
 				this.settings = $.extend( {}, defaults, options );
 				this._defaults = defaults;
 				this._name = pluginName;
@@ -57,13 +46,6 @@
 
 		Plugin.prototype = {
 				init: function () {
-						// Place initialization logic here
-						// You already have access to the DOM element and
-						// the options via the instance, e.g. this.element
-						// and this.settings
-						// you can add more functions like the one below and
-						// call them like so: this.yourOtherFunction(this.element, this.settings).
-            
             $window = $(window);
             base = this;
 
@@ -101,14 +83,16 @@
             for(i=0; i < this.settings.years.length; i++) { 
               yearsOptions += "<option>" + this.settings.years[i] + "</option>";
             }
-            daysSelect = '<label for="day">Date</label><select id="day">' + daysOptions + '</select>';
-            monthsSelect = '<label for="month">Month</label><select id="month">' + monthsOptions + '</select>';
-            yearsSelect = '<label for="year">Year</label><select id="year">' + yearsOptions + '</select>';
+            daysSelect = '<label for="day">Date</label><select id="mds-day">' + daysOptions + '</select>';
+            monthsSelect = '<label for="month">Month</label><select id="mds-month">' + monthsOptions + '</select>';
+            yearsSelect = '<label for="year">Year</label><select id="mds-year">' + yearsOptions + '</select>';
             
             $window.resize(function() {
               base.addToPage(this.element, this.settings)
             })
             this.addToPage(this.element, this.settings)
+            $('#mds-day, #mds-month, #mds-year').wrap(this.settings.selectWrapper);
+            
 
 				},
 				addToPage: function () {
@@ -179,12 +163,9 @@
           }
           return d <= daysInMonth[--m]
         }
-    
         
 		};
 
-		// A really lightweight plugin wrapper around the constructor,
-		// preventing against multiple instantiations
 		$.fn[ pluginName ] = function ( options ) {
 				this.each(function() {
 						if ( !$.data( this, "plugin_" + pluginName ) ) {
@@ -192,7 +173,6 @@
 						}
 				});
 
-				// chain jQuery functions
 				return this;
 		};
 
