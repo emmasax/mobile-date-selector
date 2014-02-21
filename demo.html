@@ -2,13 +2,13 @@
 <html>
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-  <script src="mobile-date-selection.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="mobile-date-selection.css" type="text/css" />
-  <link rel="stylesheet" href="mobile-date-selection-site.css" type="text/css" />
+  <script src="jquery.mobiledateselector.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="mobile-date-selector.css" type="text/css" />
+  <link rel="stylesheet" href="mobile-date-selector-site.css" type="text/css" />
   <script>
     $(function() {
-      $('.datepicker').mobileDateSelection({ });
-      $('.datepicker2').mobileDateSelection({ longMonths : false, showBlanks : false });
+      $('.datepicker').mobileDateSelector({ });
+      $('.datepicker2').mobileDateSelector({ longMonths : false, showBlanks : false });
     });
   </script>
 </head>
@@ -38,7 +38,7 @@
         <input type="text" value="" class="datepicker" id="date" />
         <code><pre>
 $(function() {
-  $('.datepicker').mobileDateSelection();
+  $('.datepicker').mobileDateSelector();
 });</pre></code>
       </div>
       <div class="section">
@@ -47,7 +47,7 @@ $(function() {
         <input type="text" value="" class="datepicker2" id="date2" />
         <code><pre>
 $(function() {
-  $('.datepicker2').mobileDateSelection({ longMonths : false, showBlanks : false });
+  $('.datepicker2').mobileDateSelector({ longMonths : false, showBlanks : false });
 });</pre></code>
       </div>
     </div>

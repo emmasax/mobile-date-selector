@@ -12,7 +12,7 @@
 		// minified (especially when both are regularly referenced in your plugin).
 
 		// Create the defaults once
-		var pluginName = "mobileDateSelection";
+		var pluginName = "mobileDateSelecti";
 
 		// The actual plugin constructor
 		function Plugin ( element, options ) {
