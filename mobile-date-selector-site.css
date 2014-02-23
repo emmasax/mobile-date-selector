@@ -68,8 +68,20 @@ a {
   color: #e74c3c;
   text-decoration: none;
 }
+b {
+  font-weight: 600;
+}
 p {
   margin-bottom: 10px;
+}
+.logo {
+  float: left;
+  font-size: 1.6em;
+  margin: 0;
+}
+.logo a {
+  color: #fff;
+  font-weight: 600;
 }
 .nav {
   background-color: #c0392b;
@@ -86,6 +98,7 @@ p {
   font-size: 1.5em;
 }
 .nav ul {
+  margin-left: 0;
   overflow: hidden;
   float: right;
 }
@@ -93,6 +106,7 @@ p {
   list-style-type: none;
   float: left;
   margin-left: 20px;
+  line-height: 1.6;
 }
 .nav li a {
   color :#fff;
@@ -100,15 +114,10 @@ p {
   text-transform: uppercase;
 }
 .nav a {
-  font-weight: 700;
+/*  font-weight: 700;*/
 }
 .nav .for-mobile {
   float: right;
-}
-.nav ul {
-  clear: both;
-  margin-left: 0;
-/*  width: 100%;*/
 }
 label {
   display: block;
@@ -125,7 +134,7 @@ input {
 }
 .features li {
   font-size: 1.1em;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
 }
 .footer {
   background-color: #2c3e50;
@@ -159,6 +168,12 @@ input {
 .demo-page input, .demo-page .mds-mobile-date, .mds-datepicker-error {
   margin-bottom: 10px;
 }
+.demo-wrap {
+  padding: 30px 20px 10px;
+}
+.demo-wrap, .iframe-demo {
+  background-color: #fff;
+}
 @media all and (min-width: 568px) {
   .non-mobile {
     display: inline;
@@ -175,7 +190,7 @@ input {
   }
   h1 {
     font-size: 2.6em;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     text-align: left;
   }
   .other h1 {
