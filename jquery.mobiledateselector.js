@@ -94,13 +94,11 @@
       this.settings.monthsSelect = '<label for="month">Month</label><select id="mds-month">' + monthsOptions + '</select>';
       this.settings.yearsSelect = '<label for="year">Year</label><select id="mds-year">' + yearsOptions + '</select>';
 
+      
       $window.resize(function() {
         base.addToPage(base.element, base.settings);
       })
       this.addToPage(this.element, this.settings);
-      $('#mds-day').wrap(this.settings.selectWrapper);
-      $('#mds-month').wrap(this.settings.selectWrapper);
-      $('#mds-year').wrap(this.settings.selectWrapper);
 
 	  },
 		addToPage: function () {
@@ -116,7 +114,13 @@
             $(this.element).hide();
           }
           $(this.element).after('<ul class="mds-mobile-date ' + this.settings.selectorClass + '"><li>' + this.settings.daysSelect + '</li><li>' + this.settings.monthsSelect + '</li><li>' + this.settings.yearsSelect + '</li></ul>');
-            
+          
+          if(this.settings.selectWrapper != '') {
+            $('#mds-day').wrap("<div class='" + this.settings.selectWrapper + "'></div>");
+            $('#mds-month').wrap("<div class='" + this.settings.selectWrapper + "'></div>");
+            $('#mds-year').wrap("<div class='" + this.settings.selectWrapper + "'></div>");            
+          }
+          
           $('.' + this.settings.selectorClass + ' select#mds-day').on('change', function() {
             base.buildDayDate(base.element, base.settings);
           });
