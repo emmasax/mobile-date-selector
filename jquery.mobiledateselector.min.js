@@ -98,7 +98,9 @@
         base.addToPage(base.element, base.settings);
       })
       this.addToPage(this.element, this.settings);
-      $('#mds-day, #mds-month, #mds-year').wrap(this.settings.selectWrapper);
+      $('#mds-day').wrap(this.settings.selectWrapper);
+      $('#mds-month').wrap(this.settings.selectWrapper);
+      $('#mds-year').wrap(this.settings.selectWrapper);
 
 	  },
 		addToPage: function () {
