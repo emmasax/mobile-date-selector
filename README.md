@@ -5,10 +5,11 @@
 ## What is this all about?
 
 * A simple and intuitive date picker for mobile devices
-* Useful if current date selector is a single input field
-* Three select boxes will populate your original input field
-* Contains a built in valid date checker
-* [Configuration options](http://emmasax.github.io/mobile-date-selector/options.html)
+* HTML5 input type date is not widely supported
+* Enabled when HTML5 input type date is not detected (can be overridden)
+* Three select boxes will populate your original date field
+* Contains a built in valid date checker, for example 31 February 2016 is invalid
+* Many [configuration options](http://emmasax.github.io/mobile-date-selector/options.html) are available
 
 ## How do I use it?
 
@@ -25,9 +26,9 @@ There is an optional basic theme (the plugin will work without this):
 
 ### Step 2: Add a class
 
-Add a class your input field, e.g. 'datepicker':
+Add a class to your date field, e.g. 'datepicker':
 
-    <input type="text" value="" class="datepicker" />
+    <input type="date" value="" class="datepicker" />
 
 ### Step 3: Initialise the plugin
 
