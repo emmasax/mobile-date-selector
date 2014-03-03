@@ -10,7 +10,7 @@
 
 	var pluginName = "mobileDateSelector";
 
-	function Plugin ( element, options ) {      
+	function Plugin ( element, options ) {
     defaults = {
       // options
       showBlanks: true,
@@ -21,6 +21,8 @@
       startYear: (new Date).getFullYear(),
       breakPoint: 568,
       selectWrapper: "",
+      forcePlugin: false,
+      demoMode: false,
     
       // global variables
       day: "",
@@ -40,7 +42,14 @@
 		this.settings = $.extend( {}, defaults, options );
 		this._defaults = defaults;
 		this._name = pluginName;
-		this.init();
+
+    // check if we're going to use the plugin or not
+    var i = document.createElement("input");
+    i.setAttribute("type", "date");
+
+    if(this.settings.forcePlugin || i.type == "text") {
+      this.init();
+    } 
 	}
 
 	Plugin.prototype = {
@@ -101,7 +110,10 @@
       if ($window.width() < this.settings.breakPoint) {
         if(mobileDateSelector.length == 0) {
           elementLabel.hide();
-          $(this.element).hide().after('<ul class="mds-mobile-date ' + this.settings.selectorClass + '"><li>' + this.settings.daysSelect + '</li><li>' + this.settings.monthsSelect + '</li><li>' + this.settings.yearsSelect + '</li></ul>');
+          if(!this.settings.demoMode) {
+            $(this.element).hide();
+          }
+          $(this.element).after('<ul class="mds-mobile-date ' + this.settings.selectorClass + '"><li>' + this.settings.daysSelect + '</li><li>' + this.settings.monthsSelect + '</li><li>' + this.settings.yearsSelect + '</li></ul>');
             
           $('.' + this.settings.selectorClass + ' select#mds-day').on('change', function() {
             base.buildDayDate(base.element, base.settings);
@@ -126,12 +138,14 @@
 		},
     buildDayDate: function() {
       this.settings.day = $('.' + this.settings.selectorClass + ' select#mds-day').find(":selected").val();
+      if(this.settings.day < 10) this.settings.day = '0'+this.settings.day;
       this.setDate();
     },
 
     buildMonthDate: function() {
       this.settings.month = $('.' + this.settings.selectorClass + ' select#mds-month').find(":selected").text();
       this.settings.monthNumber = $('.' + this.settings.selectorClass + ' select#mds-month').find(":selected").val();
+      if(this.settings.monthNumber < 10) this.settings.monthNumber = '0'+this.settings.monthNumber;
       this.setDate();
     },
 
@@ -141,7 +155,7 @@
     },
 
     setDate: function() {
-      this.settings.wholeDate = this.settings.day + " " + this.settings.month + " " + this.settings.year;
+      this.settings.wholeDate = this.settings.year + "-" + this.settings.monthNumber + "-" + this.settings.day;
       $('.' + this.settings.selectorClass + '-error').remove();
       if( this.settings.day != '' && this.settings.month != '' && this.settings.year != '') {
         if(this.isValidDate(this.settings.day + " " + this.settings.monthNumber + " " + this.settings.year)) {
