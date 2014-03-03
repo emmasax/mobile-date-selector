@@ -8,7 +8,7 @@
 
   <script>
     $(function() {
-      $('.datepicker').mobileDateSelector({});
+      $('.datepicker').mobileDateSelector({ forcePlugin : true });
     });
   </script>
 </head>
@@ -33,7 +33,7 @@
           <div class="noplugin">
             <h2>No plugin</h2>
             <label for="date2">Date</label>
-            <input type="text" value="" id="date2" />
+            <input type="date" value="" id="date2" />
           </div>
           <iframe sandbox="allow-same-origin allow-forms allow-scripts" seamless="" width="240" height="95" src="iframe-demo.html"></iframe></iframe>
         </div>
@@ -43,10 +43,11 @@
         <h2>What is this all about?</h2>
         <ul class="features">
           <li><b>A simple and intuitive date picker for mobile devices</b></li>
-          <li>Useful if current date selector is a single input field</li>
-          <li>Three select boxes will populate your original input field</li>
-          <li>Contains a built in valid date checker</li>
-          <li><a href="options.html">Configuration options</a></li>
+          <li>HTML5 input type date is <a href="http://caniuse.com/#feat=input-datetime">not widely supported</a></li>
+          <li>Enabled when HTML5 input type date is not detected (<a href="options.html">can be overridden</a>)</li>
+          <li>Three select boxes will populate your original date field</li>
+          <li>Contains a built in valid date checker, for example <small><i>31 February 2016</i></small> is invalid</li>
+          <li>Many <a href="options.html">configuration options</a> are available</a></li>
         </ul>
         <p>I would recommend <a href="http://jqueryui.com/datepicker/">jQuery UI Datepicker</a> for non-mobile devices.</p>
       </div>
@@ -63,9 +64,9 @@
 &lt;link rel="stylesheet" href="[your-path]/mobile-date-selector.css" /&gt;</pre></code>
 
         <h3>Step 2: Add a class</h3>
-        <p>Add a class your input field, e.g. 'datepicker':</p>
+        <p>Add a class to your date field, e.g. 'datepicker':</p>
         <code><pre>
-&lt;input type="text" value="" class="datepicker" /&gt;</pre></code>
+&lt;input type="date" value="" class="datepicker" /&gt;</pre></code>
 
         <h3>Step 3: Initialise the plugin</h3>
         <p>Using the class you chose in step 2:</p>

@@ -59,6 +59,7 @@ code {
 }
 code p {
   padding: 10px;
+  font-size: 1em;
 }
 code p:first-child {
   padding-bottom: 0;
@@ -171,6 +172,9 @@ input {
 .demo-wrap {
   padding: 30px 20px 10px;
 }
+iframe {
+  border: 0;
+}
 .demo-wrap, .iframe-demo {
   background-color: #fff;
 }
@@ -195,6 +199,12 @@ input {
   }
   .other h1 {
     text-align: left;
+  }
+  .other h2 {
+    margin-bottom: 5px;
+  }
+  .other code {
+    margin-bottom: 50px;
   }
   h2 {
     font-size: 1.8em;

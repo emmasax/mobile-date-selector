@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="mobile-date-selector-site.css" type="text/css" />
   <script>
     $(function() {
-      $('.datepicker').mobileDateSelector();
-      $('.datepicker2').mobileDateSelector({ longMonths : false, showBlanks : false });
+      $('.datepicker').mobileDateSelector({ forcePlugin : true, longMonths : false, showBlanks : false });
+      $('.datepicker2').mobileDateSelector( { forcePlugin : true, demoMode : true } );
     });
   </script>
 </head>
@@ -29,28 +29,30 @@
     <div class="inner">
       <div class="section">
         <h1>Examples</h1>
-        <p>Change the size of your browser window to activate the plugin. The default is set to widths less than 568px.</p>
+        <p>Change the size of your browser window to activate the plugin (default is anything less than 568px wide)</p>
         <p><a href="index.html">Back to home page</a></p>
       </div>
       
       <div class="section">
-        <h2>Default usage</h2>
-        <label for="date">Date</label>
-        <input type="text" value="" class="datepicker" id="date" />
-        <code><pre>
-$(function() {
-  $('.datepicker').mobileDateSelector();
-});</pre></code>
-      </div>
-      <div class="section">
         <h2>Short months, no blanks</h2>
-        <label for="date2">Date</label>
-        <input type="text" value="" class="datepicker2" id="date2" />
+        <label for="date">Date</label>
+        <input type="date" value="" class="datepicker" id="date" />
         <code><pre>
 $(function() {
-  $('.datepicker2').mobileDateSelector({ longMonths : false, showBlanks : false });
+  $('.datepicker').mobileDateSelector({ longMonths : false, showBlanks : false });
 });</pre></code>
       </div>
+
+      <div class="section">
+        <h2>Demo mode turned on</h2>
+        <label for="date2">Date</label>
+        <input type="date" value="" class="datepicker2" id="date2" />
+        <code><pre>
+$(function() {
+  $('.datepicker2').mobileDateSelector({ demoMode : true });
+});</pre></code>
+      </div>
+
       <div class="section">
         <h2>Questions &amp; suggestions?</h2>
         <p>Feel free to submit them via <a href="https://github.com/emmasax/mobile-date-selector/issues">GitHub's issue tracker</a>.</p>

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="mobile-date-selector-site.css" type="text/css" />
   <script>
     $(function() {
-      $('.datepicker').mobileDateSelector();
+      $('.datepicker').mobileDateSelector({ forcePlugin : true });
     });
   </script>
 </head>
@@ -17,7 +17,7 @@
   <ul class="demo">
     <li>
       <label for="date">Date</label>
-      <input type="text" value="" class="datepicker" id="date" />
+      <input type="date" value="" class="datepicker" id="date" />
     </li>
   </ul>
 </body>
