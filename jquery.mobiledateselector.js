@@ -15,7 +15,7 @@
       // options
       showBlanks: true,
       errorMessage: "Sorry, that is not a valid date.",
-      selectorClass: "mds-" + $(element).attr('class') + "-" + $(element).index(),
+      selectorClass: "mds-" + $(element).attr('class').replace(/\s/g, '-') + "-" + $(element).index(),
       longMonths: true,
       numYears: 10,
       startYear: (new Date).getFullYear(),
